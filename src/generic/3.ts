@@ -3,8 +3,9 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-function merge (objA, objB) {
-  return Object.assign(objA, objB);
+function merge<T, U>(objA: T, objB: U): T & U {
+  const mergedObj = JSON.parse(JSON.stringify(objA));
+  Object.assign(mergedObj, objB);
+  return mergedObj;
 }
-
-export {}
+export {};

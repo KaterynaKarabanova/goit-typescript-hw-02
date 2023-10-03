@@ -12,12 +12,20 @@ type User = {
   surname: string;
   email: string;
   password: string;
+};
+
+function createOrUpdateUser(initialValues: Partial<User>): User {
+  const defaultUser: User = {
+    name: "",
+    email: "",
+    password: "",
+    surname: "",
+  };
+
+  // З'єднуємо дані користувача та значення за замовчуванням
+  return { ...defaultUser, ...initialValues };
 }
 
-function createOrUpdateUser(initialValues: User) {
-  // Оновлення користувача
-}
-
-createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
+createOrUpdateUser({ email: "user@mail.com", password: "password123" });
 
 export {};
