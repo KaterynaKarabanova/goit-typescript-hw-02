@@ -15,15 +15,15 @@ type User = {
 };
 
 function createOrUpdateUser(initialValues: Partial<User>): User {
-  const defaultUser: User = {
-    name: "",
-    email: "",
-    password: "",
-    surname: "",
+  const normalUser: User = {
+    name: "Alex",
+    email: "Alex@alex.com",
+    password: "aLeX5555",
+    surname: "Alex",
   };
 
   // З'єднуємо дані користувача та значення за замовчуванням
-  return { ...defaultUser, ...initialValues };
+  return { ...normalUser, ...initialValues };
 }
 
 createOrUpdateUser({ email: "user@mail.com", password: "password123" });

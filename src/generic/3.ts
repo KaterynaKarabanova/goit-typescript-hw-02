@@ -4,8 +4,10 @@
 */
 
 function merge<T, U>(objA: T, objB: U): T & U {
-  const mergedObj = JSON.parse(JSON.stringify(objA));
-  Object.assign(mergedObj, objB);
-  return mergedObj;
+  return Object.assign({}, objA, objB);
 }
+// function merge<Object>(objA: {}, objB: {}): {} {
+//   return Object.assign(objA, objB);
+// }
+
 export {};
