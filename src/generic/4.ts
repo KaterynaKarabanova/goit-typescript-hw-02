@@ -3,21 +3,16 @@
 */
 
 interface ComponentProps {
-  // Опис властивостей, які мають бути в компоненті
-}
-
-class Component<T extends ComponentProps> {
-  constructor(public props: T) {}
-}
-
-interface PageProps extends ComponentProps {
   title: string;
 }
 
-class Page extends Component<PageProps> {
-  pageInfo() {
+class Component<T> {
+  constructor(public props: T) {}
+}
+
+class Page extends Component<ComponentProps> {
+  pageInfo(): void {
     console.log(this.props.title);
   }
 }
-
 export {};
