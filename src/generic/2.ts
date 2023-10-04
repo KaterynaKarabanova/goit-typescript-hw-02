@@ -11,8 +11,8 @@ type AllType = {
   weight: number;
 };
 // type UserBasicInfo = Pick<AllType, "name" | "position" | "color" | "weight">;
-type TopType = Pick<AllType, "name" | "position" | "color" | "weight">;
-type BottomType = Pick<AllType, "name" | "position" | "color" | "weight">;
+type TopType = Pick<AllType, "name" | "color">;
+type BottomType = Pick<AllType, "position" | "weight">;
 
 function compare(top: TopType, bottom: BottomType): AllType {
   return {
